@@ -1,0 +1,83 @@
+/* ===== RESET & BASE ===== */
+* { box-sizing:border-box; margin:0; padding:0; font-family: Inter, Arial, sans-serif; }
+body { background:#f5f7fa; color:#111827; line-height:1.6; }
+.container { width:90%; max-width:1200px; margin:0 auto; }
+
+/* ===== NAVBAR ===== */
+.navbar { position:fixed; top:0; left:0; width:100%; background:#0d192e; padding:12px 0; z-index:1000; box-shadow:0 2px 8px rgba(0,0,0,0.12); }
+.nav-inner { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.logo { display:flex; align-items:center; gap:10px; color:#fff; font-weight:700; text-decoration:none; }
+.logo img { width:40px; height:40px; border-radius:8px; object-fit:cover; }
+.nav-menu { display:flex; gap:18px; list-style:none; align-items:center; }
+.nav-menu a { color:#e9eef7; font-size:15px; padding:8px 10px; border-radius:6px; text-decoration:none; transition:all .18s ease; }
+.nav-menu a:hover { background: rgba(255,255,255,0.04); color:#7fc7ff; }
+
+/* Navbar toggle (mobile) */
+.nav-toggle { display:none; font-size:24px; background:none; border:0; color:#fff; cursor:pointer; }
+
+/* ===== HERO 8:4 ===== */
+.hero { padding:120px 0 60px; background: linear-gradient(135deg,#06203a 0%, #0b3b62 100%); color:#fff; }
+.hero-grid { display:flex; flex-wrap:nowrap; gap:20px; align-items:center; }
+.hero-content { flex:0 0 66.6666%; }
+.hero-banner { flex:0 0 33.3333%; text-align:center; }
+.hero h1 { font-size:40px; line-height:1.06; margin-bottom:12px; }
+.lead { font-size:17px; margin-bottom:12px; opacity:.95; }
+.hero .small { font-size:14px; opacity:.9; }
+.hero-banner img { width:100%; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.35); }
+
+/* Buttons */
+.btn { display:inline-block; padding:12px 22px; border-radius:8px; text-decoration:none; font-weight:600; margin-right:12px; transition:all .18s ease; }
+.btn.primary { background:#33a2ff; color:#fff; }
+.btn.primary:hover { transform:translateY(-3px); background:#198be8; }
+.btn.secondary { background:#ffffff; color:#0b2a44; }
+.btn.secondary:hover { transform:translateY(-3px); }
+
+/* CTA row */
+.cta-row { margin:14px 0 6px; }
+
+/* ===== SECTIONS ===== */
+.section { padding:48px 0; background:#fff; margin-top:18px; border-radius:8px; box-shadow:0 6px 18px rgba(12,20,28,0.03); }
+.section h2 { font-size:28px; color:#07203a; margin-bottom:12px; }
+.section p { margin-bottom:12px; color:#333; }
+.nice-list { margin:12px 0 18px 20px; }
+.nice-list li { margin-bottom:10px; }
+
+/* Steps */
+.steps { margin:12px 0 18px 20px; }
+.steps li { margin-bottom:10px; }
+
+/* Download */
+.download-wrap { text-align:center; margin:14px 0; }
+.small-note { font-size:13px; color:#666; margin-top:8px; }
+
+/* ===== FAQ ===== */
+.faq-item { margin-bottom:12px; border-radius:8px; border:1px solid #e6edf5; overflow:hidden; background:#fff; }
+.faq-question { padding:14px 18px; display:flex; justify-content:space-between; align-items:center; cursor:pointer; font-weight:600; }
+.faq-question::after { content:'+'; font-size:20px; }
+.faq-item.active .faq-question::after { content:'−'; }
+.faq-answer { padding:0 18px; max-height:0; overflow:hidden; transition:max-height .33s ease, padding .33s ease; color:#444; }
+.faq-item.active .faq-answer { padding:14px 18px; max-height:600px; }
+
+/* ===== FOOTER ===== */
+.footer { background:#0d192e; color:#d6e6f6; padding:36px 0; margin-top:20px; }
+.footer-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; }
+.footer-links li { margin-bottom:8px; }
+.footer-toggle { cursor:pointer; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:1024px){
+  .hero-grid { flex-wrap:wrap; }
+  .hero-content, .hero-banner { flex:1 1 100%; text-align:center; }
+  .hero h1 { font-size:32px; }
+}
+
+@media (max-width:768px){
+  .nav-menu { display:none; position:absolute; top:68px; right:12px; background:#0b1a2a; padding:12px; border-radius:8px; box-shadow:0 8px 30px rgba(0,0,0,0.3); flex-direction:column; min-width:190px; }
+  .nav-menu.active { display:flex; }
+  .nav-toggle { display:block; }
+  .hero { padding-top:100px; }
+  .section { padding:28px 0; margin-top:12px; }
+  .faq-answer { max-height:0; }
+  .footer .footer-content { max-height:0; overflow:hidden; transition:max-height .3s ease; }
+  .footer-section.active .footer-content { max-height:500px; padding-top:8px; }
+}
